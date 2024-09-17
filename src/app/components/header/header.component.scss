@@ -1,0 +1,50 @@
+@import '../../partials/variables';
+@import '../../partials/mixins';
+
+header {
+    height: 97px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    background :$white;
+
+    div.left-side {
+        display: flex;
+        align-items: center;
+
+        svg {
+            width: 152.53px;
+            margin-right: 32.47px;
+        }
+
+        div.lines-bar {
+            width: 1px;
+            height: 96px;
+            background: $lines-light;
+            margin-right: 32px;
+        }
+
+        h3 {
+            @include headingXL;
+        }
+    }
+
+
+    div.add-new-task {
+        display: flex;
+        align-items: center;
+
+        button#add-new-task-btn {
+            @include add-new-task-btn-idle;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        svg {
+            margin-left: 26px;
+        }
+    }
+}
