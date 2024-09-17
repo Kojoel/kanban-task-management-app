@@ -1,8 +1,14 @@
 .app-container {
     display: flex;
-    
 
-    app-header {
+
+    .right-side {
+        display: flex;
+        flex-direction: column;
         flex: 1;
+
+        app-board {
+            flex: 1;
+        }
     }
 }
