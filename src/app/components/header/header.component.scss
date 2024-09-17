@@ -8,6 +8,7 @@ header {
     align-items: center;
     padding: 0 24px;
     background :$white;
+    transition: .2s ease-in-out;
 
     div.left-side {
         display: flex;
@@ -41,10 +42,80 @@ header {
             justify-content: center;
             align-items: center;
             gap: 5px;
+            transition: .2s ease-in-out;
+
+            svg#plus-sign{
+                width: fit-content;
+                margin-left: 0;
+            }
+        }
+
+        button#add-new-task-btn.add-new-task-mobile-btn {
+            display: none;
+            transition: .2s ease-in-out;
         }
 
         svg {
             margin-left: 26px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    header {
+        height: 80px;
+    }
+}
+
+
+@media screen and (max-width: 636px) {
+
+    header {
+        height: 64px;
+
+        div.left-side {
+    
+            svg {
+                width: 30px;
+                margin-right: 7px;
+            }
+    
+            div.lines-bar {
+                display: none;
+            }
+    
+            h3 {
+                
+            }
+        }
+
+
+        div.add-new-task {
+    
+            button#add-new-task-btn {
+                display: none;
+    
+                svg#plus-sign{
+
+                }
+            }
+    
+            button#add-new-task-btn.add-new-task-mobile-btn {
+                display: flex;
+                height: 32px;
+                padding: 0;
+                width: 48px;
+
+                svg#plus-sign {
+                    padding: 0 0;
+                }
+            }
+    
+            svg {
+                margin-left: 26px;
+            }
         }
     }
 }
