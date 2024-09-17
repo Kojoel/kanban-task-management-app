@@ -1,0 +1,93 @@
+@import './variables';
+@import './functions';
+
+// Typography mixins
+
+@mixin headingXL() {
+    font-family: $jakafont;
+    font-size: px-to-rem(24px);
+    line-height: px-to-rem(30px);
+    font-style: bold;
+}
+
+@mixin headingL() {
+    font-family: $jakafont;
+    font-size: px-to-rem(18px);
+    line-height: px-to-rem(23px);
+    font-style: bold;
+}
+
+@mixin headingM() {
+    font-family: $jakafont;
+    font-size: px-to-rem(12px);
+    line-height: px-to-rem(15px);
+    letter-spacing: px-to-rem(2.4px);
+    font-style: bold;
+}
+
+@mixin paragM() {
+    font-family: $jakafont;
+    font-size: px-to-rem(13px);
+    line-height: px-to-rem(23px);
+}
+
+@mixin paragB() {
+    font-family: $jakafont;
+    font-style: bold;
+    font-size: px-to-rem(12px);
+    line-height: px-to-rem(15px);
+}
+
+
+// Interactive elements mixins
+// Light Version
+
+@mixin primary-btnL() {
+    @include headingL;
+    color: $white;
+    width: 255px;
+    height: 48px;
+    border-radius: 24px;
+    background: $main-purple;
+}
+
+@mixin primary-btnS() {
+    @include paragM;
+    color: $white;
+    width: 255px;
+    height: 40px;
+    border-radius: 20px;
+    background: $main-purple;
+}
+
+@mixin primary-btnL-hover() {
+    @include primary-btnL;
+    background: $main-purple-hover;
+}
+
+@mixin primary-btnS-hover() {
+    @include primary-btnS;
+    background: $main-purple-hover;
+}
+
+@mixin secondary-btn() {
+    @include primary-btnS;
+    background: $main-purple-idle;
+    color: $main-purple;
+}
+
+@mixin secondary-btn-hover() {
+    @include primary-btnS;
+    background: $main-purple-idle-hover;
+    color: $main-purple;
+}
+
+@mixin destructive-btn() {
+    @include primary-btnS;
+    background: $red;
+}
+
+@mixin destructive-btn-hover() {
+    @include primary-btnS;
+    background: $red-hover;
+}
