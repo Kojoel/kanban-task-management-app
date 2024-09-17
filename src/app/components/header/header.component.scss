@@ -9,6 +9,7 @@ header {
     padding: 0 24px;
     background :$white;
     transition: .2s ease-in-out;
+    border-bottom: 1px solid $lines-light;
 
     div.left-side {
         display: flex;
@@ -74,6 +75,7 @@ header {
 
     header {
         height: 64px;
+        border-bottom: none;
 
         div.left-side {
     
@@ -85,10 +87,6 @@ header {
             div.lines-bar {
                 display: none;
             }
-    
-            h3 {
-                
-            }
         }
 
 
@@ -96,10 +94,6 @@ header {
     
             button#add-new-task-btn {
                 display: none;
-    
-                svg#plus-sign{
-
-                }
             }
     
             button#add-new-task-btn.add-new-task-mobile-btn {
