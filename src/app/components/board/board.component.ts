@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../../services/api/api.service';
 
 @Component({
   selector: 'app-board',
@@ -9,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class BoardComponent {
 
+    constructor(public apiService: ApiService) {}
+
+    ngOnInit() {
+      this.apiService.getData().subscribe(items => console.log(items));
+    }
 }
