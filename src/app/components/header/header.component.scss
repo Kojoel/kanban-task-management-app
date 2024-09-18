@@ -14,14 +14,14 @@ header {
     div.left-side {
         display: flex;
         align-items: center;
+        position: relative;
 
         svg {
-            width: 152.53px;
-            margin-right: 32.47px;
+            
         }
 
         div.lines-bar {
-            width: 1px;
+            // width: 1px;
             height: 96px;
             background: $lines-light;
             margin-right: 32px;
@@ -112,4 +112,23 @@ header {
             }
         }
     }
+}
+
+// Toggle logo visibility
+.visible {
+    display: none;
+}
+
+.not-visible {
+    width: 152.53px;
+    margin-right: 32.47px;
+}
+
+// Toggle border visibility 
+.border-visible {
+    display: none;
+}
+
+.border-not-visible {
+    width: 1px;
 }

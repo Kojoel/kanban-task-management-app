@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SidebarService } from '../../services/sidebar/sidebar.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './side-bar.component.scss'
 })
 export class SideBarComponent {
+
+  constructor(public sidebar: SidebarService) {}
 
 }

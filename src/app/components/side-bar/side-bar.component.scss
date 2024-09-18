@@ -2,7 +2,7 @@
 @import '../../partials/mixins';
 
 aside {
-    width: 300px;
+    width: 0px;
     height: 100vh;
     background: $white;
     // position: absolute;
@@ -14,6 +14,8 @@ aside {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: .2s ease-in-out;
+    transform: translateX(-300px);
 
 
     svg.logo {
@@ -164,6 +166,7 @@ aside {
         margin-top: 8px;
         cursor: pointer;
         transition: .1s ease-in-out;
+        position: relative;
 
         svg {
             margin-right: 15px;
@@ -193,4 +196,35 @@ aside {
             color: $main-purple-hover;
         }
     }
+
+    div.show-sidebar-btn {
+        width: 56px;
+        height: 48px;
+        background: $main-purple;
+        border-radius: 0px 100px 100px 0px;
+        padding-right: 10px;
+        cursor: pointer;
+        transition: .2s ease-in-out;
+        position: absolute;
+        bottom: 30px;
+        left: 300px;
+    }
+    div.show-sidebar-btn:hover {
+        background: $main-purple-hover;
+    }
+}
+
+
+.visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.not-visible {
+    display: none;
+}
+
+.show-sidebar {
+    transform: translateX(0);
+    width: 300px;
 }
