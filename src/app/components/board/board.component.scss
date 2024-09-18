@@ -4,4 +4,28 @@
 .board-container {
     height: 100%;
     background: $light-grey;
+
+    div.empty-board {
+        width: inherit;
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: Center;
+        justify-content: center;
+        gap: 32px;
+
+        p {
+            @include headingL;
+            color: $medium-grey;
+        }
+
+        button#add-new-column-btn {
+            @include add-new-task-btn;
+            padding: 0 18px;
+        }
+
+        button#add-new-column-btn:hover {
+            @include add-new-task-btn-hover;
+        }
+    }
 }
