@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Board } from '../../models/boards.model';
 import { SelectActiveBoard, selectAllBoards } from '../../store/selectors/boards.selectors';
 import { AsyncPipe } from '@angular/common';
-import { loadBoards } from '../../store/actions/boards.action';
+import { loadBoards, setActiveBoard } from '../../store/actions/boards.action';
 
 @Component({
   selector: 'app-side-bar',
@@ -17,12 +17,23 @@ import { loadBoards } from '../../store/actions/boards.action';
 export class SideBarComponent {
 
   boards$: Observable<Board[]>;
+  activeBoard$: Observable<Board[]>;
 
   constructor(
     public sidebar: SidebarService,
     private store: Store,
   ) {
     this.boards$ = this.store.select(selectAllBoards);
+    this.activeBoard$ = this.store.select(SelectActiveBoard);
+  }
+
+  ngOnInit() {
+    this.boards$.subscribe(item => console.log(item))
+    this.activeBoard$.subscribe(item => console.log(item))
+  }
+
+  selectBoard( boardName: string ) {
+    this.store.dispatch(setActiveBoard({boardName}));
   }
 
 }

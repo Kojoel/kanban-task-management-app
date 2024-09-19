@@ -29,13 +29,4 @@ export class BoardComponent {
       this.loading$ = this.store.select(selectBoardsLoading);
     }
 
-    ngOnInit() {
-      // this.store.dispatch(loadBoards());
-
-      this.activeBoard$.subscribe(item => console.log(item))
-    }
-
-    getActive() {
-      // this.activeBoard$.subscribe(item => console.log("items:", item));
-    }
 }

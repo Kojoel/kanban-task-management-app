@@ -1,9 +1,11 @@
 .app-container {
+    width: 100%;
     display: flex;
     overflow: hidden;
 
 
     .right-side {
+        width: 100%;
         display: flex;
         flex-direction: column;
         flex: 1;

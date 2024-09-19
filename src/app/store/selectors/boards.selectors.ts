@@ -9,12 +9,12 @@ export const selectAllBoards = createSelector(
     (state: BoardState) => state.boards
 );
 
-export const SelectActiveBoard = createSelector(
-    selectBoardState,
-    (state: BoardState) => state.boards.filter((state: Board) => state.isActive === 'true')
-);
-
 export const selectBoardsLoading = createSelector(
     selectBoardState,
     (state: BoardState) => state.loading
+);
+
+export const SelectActiveBoard = createSelector(
+    selectBoardState,
+    (state: BoardState) => state.boards.filter((state: Board) => state.isActive === 'true')
 );
