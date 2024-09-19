@@ -4,6 +4,7 @@
 .board-container {
     height: 100%;
     background: $light-grey;
+    overflow-y: scroll;
 
     div.empty-board {
         width: inherit;
@@ -45,6 +46,7 @@
             div.column-head {
                 display: flex;
                 gap: 12px;
+                margin-bottom: 24px;
     
                 div.circle {
                     width: 15px;
@@ -55,9 +57,43 @@
     
                 p.column-name {
                     @include headingS;
-                    
                 }
             }
+
+            div.column-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                div.task-item-title {
+                    @include headingM;
+                    width: 100%;
+                    height: fit-content;
+                    padding: 23px 16px;
+                    background: $white;
+                    border-radius: 8px;
+                    box-shadow: $shadow;
+                }
+
+                div.subtask {
+                    @include paragB;
+                    color: $medium-grey;
+                    margin-top: 8px;
+                }
+            }
+        }
+
+        .new-column {
+            @include headingXL;
+            width: 280px;
+            height: 814px;
+            background: $new-column-bg;
+            border-radius: 6px;
+            display: grid;
+            place-items: center;
+            color: $medium-grey;
+            margin-top: 39px;
+            cursor: pointer;
         }
     }
 }

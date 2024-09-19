@@ -9,7 +9,6 @@
         </div>
     }
     
-    <button (click)="getActive()">Get active</button>
     @if(activeBoard$ | async; as boards) {
         <div class="not-empty-board">
             @for(board of boards; track board) {
@@ -21,14 +20,20 @@
                         </div>
                         <div class="column-container">
                             @for(task of column.tasks; track task) {
-                                <div class="task-item">
+                                <div class="task-item-title">
                                     {{ task.title }}
+                                    <div class="subtask">
+                                        0 of 3 subtasks
+                                    </div>
                                 </div>
                             }
                         </div>
                     </div>
                 }
             }
+            <div class="new-column">
+                +New Column
+            </div>
         </div>
     }
 </div>

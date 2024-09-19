@@ -25,12 +25,4 @@ export class SideBarComponent {
     this.boards$ = this.store.select(selectAllBoards);
   }
 
-  ngOnInit() {
-    // this.boards$.subscribe(item => console.log('From sidebar',item));
-  }
-
-  // setActive() {
-  //   this.store.dispatch(SelectActiveBoard);
-  // }
-
 }
