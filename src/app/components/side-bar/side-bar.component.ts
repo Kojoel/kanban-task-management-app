@@ -3,7 +3,7 @@ import { SidebarService } from '../../services/sidebar/sidebar.service';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Board } from '../../models/boards.model';
-import { selectAllBoards } from '../../store/selectors/boards.selectors';
+import { SelectActiveBoard, selectAllBoards } from '../../store/selectors/boards.selectors';
 import { AsyncPipe } from '@angular/common';
 import { loadBoards } from '../../store/actions/boards.action';
 
@@ -26,7 +26,11 @@ export class SideBarComponent {
   }
 
   ngOnInit() {
-    this.boards$.subscribe(item => console.log('From sidebar',item));
+    // this.boards$.subscribe(item => console.log('From sidebar',item));
   }
+
+  // setActive() {
+  //   this.store.dispatch(SelectActiveBoard);
+  // }
 
 }

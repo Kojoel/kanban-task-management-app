@@ -18,7 +18,7 @@ export interface Column {
 export interface Board {
     name: string;
     columns: Column[];
-    isActive: boolean;
+    isActive: string;
 }
   
 export interface Data {

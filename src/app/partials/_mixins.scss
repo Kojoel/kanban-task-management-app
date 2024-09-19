@@ -19,10 +19,18 @@
 
 @mixin headingM() {
     font-family: $jakafont;
+    font-size: px-to-rem(15px);
+    line-height: px-to-rem(19px);
+    font-weight: 700;
+}
+
+@mixin headingS() {
+    font-family: $jakafont;
     font-size: px-to-rem(12px);
     line-height: px-to-rem(15px);
     letter-spacing: px-to-rem(2.4px);
     font-weight: 700;
+    color: $medium-grey;
 }
 
 @mixin paragM() {
