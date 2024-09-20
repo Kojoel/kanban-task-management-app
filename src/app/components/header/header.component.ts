@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Board } from '../../models/boards.model';
 import { SelectActiveBoard, selectBoardsLoading } from '../../store/selectors/boards.selectors';
 import { AsyncPipe, NgIf } from '@angular/common';
+import { ViewTaskModalService } from '../../services/modal/view-task-modal.service';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +19,11 @@ export class HeaderComponent {
   activeBoards$: Observable<Board[]>;
   loading$: Observable<boolean>;
 
-  constructor(public sidebar: SidebarService, private store: Store) {
+  constructor(
+      public sidebar: SidebarService, 
+      public taskService: ViewTaskModalService,
+      private store: Store,
+    ) {
     this.activeBoards$ = this.store.select(SelectActiveBoard);
     this.loading$ = this.store.select(selectBoardsLoading);
   }

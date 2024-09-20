@@ -7,11 +7,12 @@ import { Store } from '@ngrx/store';
 import { loadBoards } from './store/actions/boards.action';
 import { ViewTaskModalComponent } from './components/view-task-modal/view-task-modal.component';
 import { ViewTaskModalService } from './services/modal/view-task-modal.service';
+import { AddNewTaskComponent } from './components/add-new-task/add-new-task.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, SideBarComponent, BoardComponent, ViewTaskModalComponent],
+  imports: [RouterOutlet, HeaderComponent, SideBarComponent, BoardComponent, ViewTaskModalComponent, AddNewTaskComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

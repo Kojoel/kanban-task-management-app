@@ -111,13 +111,19 @@
 
 @mixin secondary-btn() {
     @include primary-btnS;
-    background: $main-purple-idle;
+    background: $main-purple-hover;
+    color: $main-purple;
+}
+
+@mixin secondary-btn-idle {
+    @include primary-btnS;
+    background: $secondary-purple-hover;
     color: $main-purple;
 }
 
 @mixin secondary-btn-hover() {
     @include primary-btnS;
-    background: $main-purple-idle-hover;
+    background: $main-purple-idle;
     color: $main-purple;
 }
 

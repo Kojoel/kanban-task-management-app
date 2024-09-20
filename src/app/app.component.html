@@ -14,6 +14,15 @@
         <app-header></app-header>
         <app-board></app-board>
     </div>
+
+    <app-add-new-task
+        [class]="taskService.addTaskClicked? 'showAddTaskModal':'dontShow'"
+    ></app-add-new-task>
+    <div class="add-task-lightbox"
+        [class]="taskService.addTaskClicked? 'showAddTaskLightBox': 'dontShow'"
+        (click)="taskService.toggleAddTaskModal()"
+    >
+    
 </div>
 
 <router-outlet />
