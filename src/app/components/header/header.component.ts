@@ -25,7 +25,7 @@ export class HeaderComponent {
 
   ngOnInit() {
     // this.activeBoards$.subscribe(item => console.log)
-    this.loading$.subscribe(item => console.log(item));
+    // this.loading$.subscribe(item => console.log(item));
   }
 
 }

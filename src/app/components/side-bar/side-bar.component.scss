@@ -34,7 +34,7 @@ aside {
     div.boards-container {
         
 
-        div#board-item {
+        div.board-item {
             @include headingM;
             letter-spacing: 0;
             color: $medium-grey;
@@ -61,7 +61,7 @@ aside {
             }
         }
 
-        div#board-item:hover {
+        div.board-item:hover {
             background: $main-purple;
             color: $white;
 
@@ -227,4 +227,33 @@ aside {
 .show-sidebar {
     transform: translateX(0);
     width: 300px;
+}
+
+
+.not-clicked {
+    @include headingM;
+    letter-spacing: 0;
+    color: $medium-grey;
+    width: 276px;
+    height: 48px;
+    border-radius: 0 100px 100px 0;
+    background: $main-purple;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+}
+
+.clicked {
+    @include headingM;
+    letter-spacing: 0;
+    color: $medium-grey;
+    width: 276px;
+    height: 48px;
+    border-radius: 0 100px 100px 0;
+    background: $white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: .1s ease-in-out;
 }

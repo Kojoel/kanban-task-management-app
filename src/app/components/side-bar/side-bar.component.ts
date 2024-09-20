@@ -18,6 +18,8 @@ export class SideBarComponent {
 
   boards$: Observable<Board[]>;
   activeBoard$: Observable<Board[]>;
+  boardsList: Board[] = [];
+
 
   constructor(
     public sidebar: SidebarService,
@@ -28,8 +30,9 @@ export class SideBarComponent {
   }
 
   ngOnInit() {
-    this.boards$.subscribe(item => console.log(item))
-    this.activeBoard$.subscribe(item => console.log(item))
+    this.boards$.subscribe(item => this.boardsList = item)
+    this.activeBoard$.subscribe(item => item);
+    // console.log(this.boardsList)
   }
 
   selectBoard( boardName: string ) {

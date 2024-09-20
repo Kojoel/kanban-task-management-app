@@ -11,7 +11,7 @@ export class SidebarService {
 
   toggleSidebarVisibility() {
     this.visible = !this.visible;
-    console.log(this.visible);
+    // console.log(this.visible);
   }
 
 }
