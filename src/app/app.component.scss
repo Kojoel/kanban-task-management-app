@@ -1,7 +1,10 @@
+@import './partials/variables';
+
 .app-container {
     width: 100%;
     display: flex;
     overflow: hidden;
+    position: relative;
 
 
     .right-side {
@@ -14,4 +17,12 @@
             flex: 1;
         }
     }
+}
+
+app-view-task-modal {
+    position: absolute;
+    z-index: 6;
+    left: 50%;
+    top: 9rem;
+    transform: translateX(-50%);
 }
