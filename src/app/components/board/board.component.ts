@@ -6,6 +6,7 @@ import { Board } from '../../models/boards.model';
 import { loadBoards } from '../../store/actions/boards.action';
 import { SelectActiveBoard, selectAllBoards, selectBoardsLoading } from '../../store/selectors/boards.selectors';
 import { AsyncPipe } from '@angular/common';
+import { ViewTaskModalService } from '../../services/modal/view-task-modal.service';
 
 @Component({
   selector: 'app-board',
@@ -22,6 +23,7 @@ export class BoardComponent {
 
     constructor(
       public apiService: ApiService,
+      public taskService: ViewTaskModalService,
       private store: Store,
     ) {
       this.boards$ = this.store.select(selectAllBoards);

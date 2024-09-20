@@ -6,6 +6,7 @@ import { BoardComponent } from './components/board/board.component';
 import { Store } from '@ngrx/store';
 import { loadBoards } from './store/actions/boards.action';
 import { ViewTaskModalComponent } from './components/view-task-modal/view-task-modal.component';
+import { ViewTaskModalService } from './services/modal/view-task-modal.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ import { ViewTaskModalComponent } from './components/view-task-modal/view-task-m
 export class AppComponent {
   title = 'kanban-task-management-app';
 
-  constructor(private store: Store) {
+  constructor(private store: Store, public taskService: ViewTaskModalService) {
 
   }
 

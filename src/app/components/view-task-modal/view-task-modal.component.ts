@@ -21,7 +21,7 @@ export class ViewTaskModalComponent {
   }
 
   ngOnInit() {
-    this.activeBoard$.subscribe(item => console.log(item)).unsubscribe();
+    this.activeBoard$.subscribe(item => console.log(item));
   }
 
 }

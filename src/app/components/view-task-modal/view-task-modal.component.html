@@ -1,36 +1,43 @@
 
-<!-- @if(activeBoard$ | async; as activeBoard){
-    @for(board of activeBoard; track board) { -->
-        <div class="task-container">
-            <div class="heading">
-                <p class=task-title>Research pricing points of various competitors and trial different business models</p>
-                <svg class="vertical-ellipsis" width="5" height="20" xmlns="http://www.w3.org/2000/svg"><g fill="#828FA3" fill-rule="evenodd"><circle cx="2.308" cy="2.308" r="2.308"/><circle cx="2.308" cy="10" r="2.308"/><circle cx="2.308" cy="17.692" r="2.308"/></g></svg>
-            </div>
-            <p class="task-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem beatae eaque quia alias laborum minima quod odio nihil necessitatibus, eos doloremque modi, natus illum rem a. Aliquam explicabo velit neque, sapiente maiores asperiores iusto repellendus!</p>
-            <p class="subtask-count">Subtasks (2 of 3)</p>
-            <div class="subtasks">
-                <div class="subtask-item">
-                    <input type="checkbox" name="task" id="task">
-                    <label for="task">Research competitor pricing and business models</label>
+@if(activeBoard$ | async; as activeBoard){
+    @for(board of activeBoard; track board) {
+            <div class="task-container">
+                <div class="heading">
+                    <p class=task-title>Research pricing points of various competitors and trial different business models</p>
+                    <svg class="vertical-ellipsis" width="5" height="20" xmlns="http://www.w3.org/2000/svg"><g fill="#828FA3" fill-rule="evenodd"><circle cx="2.308" cy="2.308" r="2.308"/><circle cx="2.308" cy="10" r="2.308"/><circle cx="2.308" cy="17.692" r="2.308"/></g></svg>
                 </div>
-                <div class="subtask-item">
-                    <input type="checkbox" name="task" id="task">
-                    <label for="task">Outline a business model that works for our solution</label>
+                <p class="task-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem beatae eaque quia alias laborum minima quod odio nihil necessitatibus, eos doloremque modi, natus illum rem a. Aliquam explicabo velit neque, sapiente maiores asperiores iusto repellendus!</p>
+                <p class="subtask-count">Subtasks (2 of 3)</p>
+                <div class="subtasks">
+                    <div class="subtask-item">
+                        <input type="checkbox" name="task" class="task">
+                        <label for="task" id="for-checkbox">Research competitor pricing and business models</label>
+                    </div>
+                    <div class="subtask-item">
+                        <input type="checkbox" name="task2" class="task">
+                        <label for="task2" id="for-checkbox">Outline a business model that works for our solution</label>
+                    </div>
+                    <div class="subtask-item">
+                        <input type="checkbox" name="task3" class="task">
+                        <label for="task3" id="for-checkbox">Talk to potential customers about our proposed solution and ask for fair price expectancy</label>
+                    </div>
+            
                 </div>
-                <div class="subtask-item">
-                    <input type="checkbox" name="task" id="task">
-                    <label for="task">Outline a business model that works for our solution</label>
+                <div class="current-status">
+                    <label for="status" id="for-status">Current Status</label>
+                    <div class="select-container">
+                        <select name="status" id="status">
+                            <option value="doing">Todo</option>
+                            <option value="doing">Doing</option>
+                            <option value="doing">Done</option>
+                        </select>
+                        <svg class="down-arrow" width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path stroke="#635FC7" stroke-width="2" fill="none" d="m1 1 4 4 4-4"/></svg>
+                    </div>
                 </div>
             </div>
-            <div class="current-status">
-                <label for="status"></label>
-                <select name="status" id="status">
-                    <option value="doing">Todo</option>
-                    <option value="doing">Doing</option>
-                    <option value="doing">Done</option>
-                </select>
-            </div>
-        </div>
-        <div class="lightbox"></div>
-    <!-- }
-} -->
+
+            <div class="lightbox"></div>
+
+        
+    }
+}
