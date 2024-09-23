@@ -1,27 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Board } from '../../models/boards.model';
-import { Observable } from 'rxjs';
+import { Board, Task } from '../../models/boards.model';
+import { Observable, Subscription, of } from 'rxjs';
 import { SelectActiveBoard } from '../../store/selectors/boards.selectors';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
+import { BoardComponent } from '../board/board.component';
+import { ViewTaskModalService } from '../../services/modal/view-task-modal.service';
 
 @Component({
   selector: 'app-view-task-modal',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, BoardComponent, NgIf],
   templateUrl: './view-task-modal.component.html',
   styleUrl: './view-task-modal.component.scss'
 })
 export class ViewTaskModalComponent {
+  selectedTask: Task | null = null;
+  private subscription: Subscription = new Subscription();
 
-  activeBoard$ : Observable<Board[]>;
+  constructor(
+      private store: Store, 
+      public taskService: ViewTaskModalService
+  ) {}
 
-  constructor(private store: Store) {
-    this.activeBoard$ = this.store.select(SelectActiveBoard); 
-  }
 
   ngOnInit() {
-    this.activeBoard$.subscribe(item => console.log(item));
+    this.subscription = this.taskService.selectedTask$.subscribe(task => {
+      this.selectedTask = task;
+      console.log(task);
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }

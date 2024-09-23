@@ -21,7 +21,7 @@
                         <div class="column-container">
                             @for(task of column.tasks; track task) {
                                 <div class="task-item-title"
-                                    (click)="taskService.toggleTaskModal()"
+                                    (click)="taskService.getTaskData(task)"
                                 >
                                     {{ task.title }}
                                     <div class="subtask">

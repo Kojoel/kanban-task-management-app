@@ -5,13 +5,15 @@ import { Observable } from 'rxjs';
 import { Board } from '../../models/boards.model';
 import { loadBoards } from '../../store/actions/boards.action';
 import { SelectActiveBoard, selectAllBoards, selectBoardsLoading } from '../../store/selectors/boards.selectors';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { ViewTaskModalService } from '../../services/modal/view-task-modal.service';
+import { ViewTaskModalComponent } from '../view-task-modal/view-task-modal.component';
+import { Task } from '../../models/boards.model';
 
 @Component({
   selector: 'app-board',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, ViewTaskModalComponent, CommonModule],
   templateUrl: './board.component.html',
   styleUrl: './board.component.scss'
 })
