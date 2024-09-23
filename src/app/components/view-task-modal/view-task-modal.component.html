@@ -1,5 +1,3 @@
-
-
     <div class="task-container">
         @if(selectedTask) {
                 <div class="heading">
@@ -8,11 +6,11 @@
                 </div>
                 <p class="task-description"> {{ selectedTask.description }} </p>
                 @if(selectedTask.subtasks; as subtasks){
-                    <p class="subtask-count">Subtasks 2 of {{ subtasks.length }} </p>
+                    <p class="subtask-count">Subtasks {{ checkCompletedCount }} of {{ subtasks.length }} </p>
                     @for(complete of selectedTask.subtasks; track complete) {
                             <div class="subtasks">
                                 <div class="subtask-item">
-                                    <input type="checkbox" name="task" class="task">
+                                    <input type="checkbox" name="task" class="task" [checked]="complete.isCompleted === true? true: false">
                                     <label for="task" id="for-checkbox">{{ complete.title }}</label>
                                 </div>
                             </div>
