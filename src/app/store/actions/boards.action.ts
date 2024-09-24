@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Board } from "../../models/boards.model";
+import { Board, Task } from "../../models/boards.model";
 
 // Load boards
 export const loadBoards = createAction('[Board] Load Boards');

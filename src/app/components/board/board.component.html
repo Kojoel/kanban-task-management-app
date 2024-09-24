@@ -9,6 +9,40 @@
         </div>
     }
     
+    <!-- @if(activeBoard$ | async; as boards) {
+        <div class="not-empty-board">
+            @for(board of boards; track board) {
+                @for(column of board.columns; track column) {
+                    <div class="column-container">
+                        <div class="column-head">
+                            <div class="circle"></div>
+                            <p class="column-name">{{ column.name }}</p>
+                        </div>
+                        <div class="column-container">
+                            @for(task of column.tasks; track task) {
+                                <div class="task-item-title"
+                                    (click)="taskService.getTaskData(task)"
+                                >
+                                    {{ task.title }}
+                                    @if(task) {
+                                        @for(item of task.subtasks; track item) {
+                                            <div class="subtask">
+                                                {{ item.isCompleted }} of 3 subtasks
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+            <div class="new-column">
+                +New Column
+            </div>
+        </div>
+    } -->
+
     @if(activeBoard$ | async; as boards) {
         <div class="not-empty-board">
             @for(board of boards; track board) {
@@ -24,9 +58,11 @@
                                     (click)="taskService.getTaskData(task)"
                                 >
                                     {{ task.title }}
-                                    <div class="subtask">
-                                        0 of 3 subtasks
-                                    </div>
+                                    @if(task.subtasks && task.subtasks.length > 0) {
+                                        <div class="subtask">
+                                            {{ getCompletedSubtasksCount(task) }} of {{ task.subtasks.length }} subtasks
+                                        </div>
+                                    }
                                 </div>
                             }
                         </div>

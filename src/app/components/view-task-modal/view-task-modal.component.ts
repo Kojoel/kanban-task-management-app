@@ -25,49 +25,25 @@ export class ViewTaskModalComponent {
       public taskService: ViewTaskModalService
   ) {}
 
+  ngOnInit() {
+    // Subscribe to task selection
+    this.subscription = this.taskService.selectedTask$.subscribe(task => {
+      this.selectedTask = task;
+      // Reset checkCompletedCount whenever a new task is selected
+      this.checkCompletedCount = 0;
 
-//   ngOnInit() {
-//     this.subscription = this.taskService.selectedTask$.subscribe(task => {
-//       this.selectedTask = task;
-//     });
-
-//     this.isComplete = this.taskService?.selectedTask$.subscribe(task => {
-//       task?.subtasks.forEach(sub => {
-//           if(sub.isCompleted === true) {
-//             this.checkCompletedCount += 1;
-//           }
-//           console.log("Current Count: ", this.checkCompletedCount)
-//       })
-//     })
-//   }
-
-//   ngOnDestroy() {
-//     this.subscription.unsubscribe();
-//   }
-
-// }
-
-ngOnInit() {
-  // Subscribe to task selection
-  this.subscription = this.taskService.selectedTask$.subscribe(task => {
-    this.selectedTask = task;
-    // Reset checkCompletedCount whenever a new task is selected
-    this.checkCompletedCount = 0;
-
-    // Calculate the number of completed subtasks
-    task?.subtasks.forEach(sub => {
-      if (sub.isCompleted) {
-        this.checkCompletedCount += 1;
-      }
+      // Calculate the number of completed subtasks
+      task?.subtasks.forEach(sub => {
+        if (sub.isCompleted) {
+          this.checkCompletedCount += 1;
+        }
+      });
     });
+  }
 
-    console.log('Completed subtasks count:', this.checkCompletedCount);
-  });
-}
-
-ngOnDestroy() {
-  // Unsubscribe to avoid memory leaks
-  this.subscription.unsubscribe();
-  this.isComplete.unsubscribe();
-}
+  ngOnDestroy() {
+    // Unsubscribe to avoid memory leaks
+    this.subscription.unsubscribe();
+    this.isComplete.unsubscribe();
+  }
 }

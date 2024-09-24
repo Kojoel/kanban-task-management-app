@@ -11,7 +11,7 @@
                             <div class="subtasks">
                                 <div class="subtask-item">
                                     <input type="checkbox" name="task" class="task" [checked]="complete.isCompleted === true? true: false">
-                                    <label for="task" id="for-checkbox">{{ complete.title }}</label>
+                                    <label for="task" id="for-checkbox" [class]="complete.isCompleted===true? 'checked':'not-checked'">{{ complete.title }}</label>
                                 </div>
                             </div>
                     }

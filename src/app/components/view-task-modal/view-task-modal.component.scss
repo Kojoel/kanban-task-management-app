@@ -54,7 +54,7 @@ div.task-container {
             }
 
             label#for-checkbox {
-                @include paragB;
+                
             }
         }
     }
@@ -99,4 +99,15 @@ div.task-container {
         }
     }
 
+}
+
+
+.checked {
+    @include paragB;
+    text-decoration: line-through;
+    opacity: .5;
+}
+
+.not-checked {
+    @include paragB;
 }

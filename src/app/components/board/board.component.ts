@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../services/api/api.service';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Board } from '../../models/boards.model';
 import { loadBoards } from '../../store/actions/boards.action';
 import { SelectActiveBoard, selectAllBoards, selectBoardsLoading } from '../../store/selectors/boards.selectors';
@@ -31,6 +31,10 @@ export class BoardComponent {
       this.boards$ = this.store.select(selectAllBoards);
       this.activeBoard$ = this.store.select(SelectActiveBoard);
       this.loading$ = this.store.select(selectBoardsLoading);
+    }
+
+    getCompletedSubtasksCount(task: any): number {
+      return task.subtasks ? task.subtasks.filter((subtask: any) => subtask.isCompleted).length : 0;
     }
 
 }
